@@ -213,3 +213,77 @@ small {
         width: 100%; /* ขยายลิงก์ให้เต็มความกว้าง */
     }
 }
+/* สไตล์สำหรับ Logo */
+.logo img {
+    width: 150px;
+}
+
+/* Navbar menu */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* เมนูต่างๆ */
+.nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 10px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Search Box */
+.search-box input {
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* สไตล์สำหรับมือถือ: แสดงปุ่ม hamburger */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    background-color: black;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+}
+
+/* Media Query สำหรับขนาดมือถือ */
+@media (max-width: 768px) {
+    /* ซ่อนเมนูแนวนอนบนมือถือ */
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-list li {
+        margin: 15px 0;
+    }
+
+    /* แสดง Hamburger Button */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* เมื่อเมนูเปิดให้แสดง */
+    .nav-list.active {
+        display: flex;
+    }
+}
+
