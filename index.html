@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>หน้าแรก - สถานที่ท่องเที่ยว</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <h1></h1>
@@ -36,7 +37,44 @@
     </header>
     
     <main>
-        <div class="container">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/pic1.jpg" class="d-block w-100" alt="ภาพแรก">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>สถานที่ท่องเที่ยวที่น่าสนใจ</h5>
+                            <p>แนะนำสถานที่ท่องเที่ยวในจังหวัดชลบุรี</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/pic2.jpg" class="d-block w-100" alt="ภาพที่สอง">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>ประวัติศาสตร์และวัฒนธรรม</h5>
+                            <p>สถานที่ท่องเที่ยวที่สะท้อนถึงประวัติศาสตร์และวัฒนธรรมท้องถิ่น</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/pic3.jpg" class="d-block w-100" alt="ภาพที่สาม">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>วิวทิวทัศน์ที่สวยงาม</h5>
+                            <p>สัมผัสธรรมชาติและวิวทิวทัศน์ที่สวยงามของจังหวัดชลบุรี</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+    
+        <!-- ส่วนข้อมูลทั่วไปและสถานที่ท่องเที่ยว -->
         <section id="about" class="section">
             <h2>ข้อมูลทั่วไป</h2>
             <ul>
@@ -74,40 +112,65 @@
                 </li>
             </ul>
         </section>
-        <section id="symbol" class="section">
-            <h2>สัญลักษณ์ประจำจังหวัด</h2>
-            <ul>
-                <li>ดอกไม้ประจำจังหวัด: ประดู่</li>
-                <li>
-                    คำขวัญจังหวัด: "ทะเลงาม ข้าวหลามอร่อย
-                    อ้อยหวาน จักสานดี ประเพณีวิ่งควาย"
-                </li>
-            </ul>
-        </section>
-        <section id="highlight" class="section">
-            <div class="text-center">
-                <h2>Highlight</h2>
+        <section id="grid" class="section">
+            <h2></h2>
+            <div class="container">
+                <div class="row">
+                    <!-- สถานที่ท่องเที่ยวที่ 1 -->
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card">
+                            <img src="images/pic1.jpg" class="card-img-top" alt="สถานที่ท่องเที่ยว 1">
+                            <div class="card-body">
+                                <h5 class="card-title">พิพิธภัณฑ์ปราสาทสัจธรรม</h5>
+                                <li>
+                                    พิพิธภัณฑ์สัตว์น้ำแห่งเดียวในเมืองพัทยา บนถนนสุขุมวิท แถวพัทยาใต้ รวบรวมสัตว์ทะเลมากมายกว่า 5,000 ชนิด
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- สถานที่ท่องเที่ยวที่ 2 -->
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card">
+                            <img src="images/pic3.jpg" class="card-img-top" alt="สถานที่ท่องเที่ยว 2">
+                            <div class="card-body">
+                                <h5 class="card-title">เกาะล้าน</h5>
+                                <li>
+                                    เป็นเกาะในอ่าวไทย อยู่ในเขตเมืองพัทยา จังหวัดชลบุรี อยู่ห่างจากชายฝั่งเมืองพัทยาเพียงแค่ 7 กิโลเมตร
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- สถานที่ท่องเที่ยวที่ 3 -->
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card">
+                            <img src="images/pic2.jpg" class="card-img-top" alt="สถานที่ท่องเที่ยว 3">
+                            <div class="card-body">
+                                <h5 class="card-title">จุดชมวิวเขาพระตำหนัก</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- สถานที่ท่องเที่ยวที่ 4 -->
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card">
+                            <img src="images/pic5.jpg" class="card-img-top" alt="สถานที่ท่องเที่ยว 4">
+                            <div class="card-body">
+                                <h5 class="card-title">หาดวงศ์อมาตย์</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- สถานที่ท่องเที่ยวที่ 5 -->
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card">
+                            <img src="images/pic4.jpg" class="card-img-top" alt="สถานที่ท่องเที่ยว 5">
+                            <div class="card-body">
+                                <h5 class="card-title">พิพิธภัณฑ์สัตว์น้ำ</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="grid-hl">
-                <div class="pic">
-                    <img class="pic-img" src="images/pic3.jpg" alt="เกาะล้าน" srcset="" />
-                    <p>เกาะล้าน</p>
-                    
-                </div>
-                <div class="pic">
-                    <img class="pic-img" src="images/pic2.jpg" alt="จุดชมวิวเขาพระตำหนัก" srcset="" />
-                    <p>จุดชมวิวเขาพระตำหนัก</p>
-                    
-                </div>
-                <div class="col">
-                    <img class="pic-img" src="images/pic4.jpg" alt="พิพิธภัณฑ์สัตว์น้ำ" srcset="" />
-                    <p>ป่าต้นน้ําบ้านน้ําราด</p>
-
-                </div>
-            </div>
-        </section>
-    </div>
-    </main>
+        </section> 
+    </main>    
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 ข้อมูลสถานที่ท่องเที่ยวในจังหวัดชลบุรี. All rights reserved.</p>
@@ -133,6 +196,7 @@
         const navList = document.querySelector('.nav-list');
         navList.classList.toggle('active');
     }
-    </script>        
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>        
 </body> 
 </html>
