@@ -329,4 +329,26 @@ small {
     background-color: #34495E;
     border-radius: 5px;
 }
+/* ปรับแต่ง Hamburger button */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle .bar {
+    background-color: #FFF;
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* เปลี่ยนขนาดไอคอนเมื่อเมนูเปิด */
+.menu-toggle.active {
+    transform: rotate(90deg);
+}
 
