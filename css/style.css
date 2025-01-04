@@ -172,3 +172,44 @@ small {
 .scroll-to-top:hover {
     background-color: #0056b3;
 }
+/* ทำให้ Navbar เป็น Hamburger Menu เมื่อหน้าจอเล็ก */
+.menu-toggle {
+    display: none; /* ซ่อนเมนู Hamburger ในตอนแรก */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+/* เมื่อหน้าจอเล็กกว่า 768px ให้แสดง Hamburger menu */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* ซ่อนเมนูเดิม */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: rgb(3, 78, 121); /* ทำให้เมนูมีพื้นหลัง */
+        position: absolute;
+        top: 60px; /* ปรับตำแหน่งของเมนู */
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: flex; /* แสดง Hamburger menu */
+    }
+
+    .nav-list.active {
+        display: flex; /* เมื่อคลิกที่ Hamburger ให้แสดงเมนู */
+    }
+
+    .nav-list a {
+        padding: 1rem;
+        text-align: center;
+        width: 100%; /* ขยายลิงก์ให้เต็มความกว้าง */
+    }
+}
