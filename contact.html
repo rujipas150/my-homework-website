@@ -8,98 +8,155 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     </head> 
 <body> 
-    <header role="banner">
-        <!-- ปุ่มเปิด Modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
-    ติดต่อเรา
-</button> 
-        <h1>ติดต่อเรา</h1> 
-        <nav role="navigation" aria-label="เมนูหลัก"> 
-            <ul> 
-            <li><a href="index.html" aria-current="page">หน้าหลัก</a></li> 
-            <li><a href="contact.html">ติดต่อเรา</a></li> 
-            </ul> 
-            </nav> 
+    <header class="header">
+        <div class="logo">
+            <img src="images/Header.jpg" alt="logo website" />
+        </div>
+        <nav class="menu">
+            <!-- Hamburger Button for mobile -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <!-- Navbar links -->
+            <ul class="nav-list">
+                <li><a href="index.html" aria-current="page">หน้าหลัก</a></li>
+                <li><a href="attractions.html">รายละเอียดสถานที่ท่องเที่ยว</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+            </ul>
+    
+            <!-- Search Box -->
+            <form class="search-box" action="#" method="get">
+                <input type="text" placeholder="ค้นหา..." name="search">
+            </form>
+        </nav>
     </header> 
- 
+
+    <!-- ปุ่มเปิด Modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
+        ติดต่อเรา
+    </button>
+
     <main role="main"> 
         <section> 
-            <h2>ส่งข้อความถึงเรา</h2> 
+            <h2></h2> 
             <form action="/submit" method="POST" role="form" aria-label="แบบฟอร์มติดต่อ"> 
                 <!-- Modal: ฟอร์มติดต่อ -->
-<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <!-- Header -->
-            <div class="modal-header">
-                <h5 class="modal-title" id="contactModalLabel">ฟอร์มติดต่อ</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <!-- Body -->
-            <div class="modal-body">
-                <form action="/submit" method="POST" role="form" aria-label="แบบฟอร์มติดต่อ">
-                    <div class="form-group">
-                        <label for="fullname">ชื่อ-นามสกุล *</label>
-                        <input  
-                            type="text"  
-                            id="fullname"  
-                            name="fullname"  
-                            required  
-                            aria-required="true" 
-                            minlength="2" 
-                            maxlength="100" 
-                            aria-describedby="fullname-help"> 
-                        <small id="fullname-help">กรุณากรอกชื่อและนามสกุลจริง</small> 
-                    </div> 
-                    <div class="form-group"> 
-                        <label for="email">อีเมล *</label> 
-                        <input  
-                            type="email"  
-                            id="email"  
-                            name="email"  
-                            required  
-                            aria-required="true" 
-                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
-                            aria-describedby="email-help"> 
-                        <small id="email-help">ตัวอย่าง: example@domain.com</small> 
-                    </div> 
-                    <div class="form-group"> 
-                        <label for="tel">เบอร์โทรศัพท์</label> 
-                        <input  
-                            type="tel"  
-                            id="tel"  
-                            name="tel" 
-                            pattern="[0-9]{10}" 
-                            aria-describedby="tel-help"> 
-                        <small id="tel-help">กรอกหมายเลข 10 หลัก ไม่ต้องมีขีด เช่น 0812345678</small> 
-                    </div> 
-                    <div class="form-group"> 
-                        <label for="message">ข้อความ *</label> 
-                        <textarea  
-                            id="message"  
-                            name="message"  
-                            required  
-                            aria-required="true" 
-                            minlength="10" 
-                            rows="5" 
-                            aria-describedby="message-help"></textarea> 
-                        <small id="message-help">กรุณากรอกข้อความอย่างน้อย 10 ตัวอักษร</small> 
-                    </div> 
-                    <div class="form-group"> 
-                        <button  
-                            type="submit" 
-                            aria-label="ส่งข้อความ"> 
-                            ส่งข้อความ
-                        </button> 
-                    </div> 
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-                     </form>
+                <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Header -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="contactModalLabel">ฟอร์มติดต่อ</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <!-- Body -->
+                            <div class="modal-body">
+                                <form action="/submit" method="POST" role="form" aria-label="แบบฟอร์มติดต่อ">
+                                    <div class="form-group">
+                                        <label for="fullname">ชื่อ-นามสกุล *</label>
+                                        <input  
+                                            type="text"  
+                                            id="fullname"  
+                                            name="fullname"  
+                                            required  
+                                            aria-required="true" 
+                                            minlength="2" 
+                                            maxlength="100" 
+                                            aria-describedby="fullname-help"> 
+                                        <small id="fullname-help">กรุณากรอกชื่อและนามสกุลจริง</small> 
+                                    </div> 
+                                    <div class="form-group"> 
+                                        <label for="email">อีเมล *</label> 
+                                        <input  
+                                            type="email"  
+                                            id="email"  
+                                            name="email"  
+                                            required  
+                                            aria-required="true" 
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                                            aria-describedby="email-help"> 
+                                        <small id="email-help">ตัวอย่าง: example@domain.com</small> 
+                                    </div> 
+                                    <div class="form-group"> 
+                                        <label for="tel">เบอร์โทรศัพท์</label> 
+                                        <input  
+                                            type="tel"  
+                                            id="tel"  
+                                            name="tel" 
+                                            pattern="[0-9]{10}" 
+                                            aria-describedby="tel-help"> 
+                                        <small id="tel-help">กรอกหมายเลข 10 หลัก ไม่ต้องมีขีด เช่น 0812345678</small> 
+                                    </div> 
+                                    <div class="form-group"> 
+                                        <label for="message">ข้อความ *</label> 
+                                        <textarea  
+                                            id="message"  
+                                            name="message"  
+                                            required  
+                                            aria-required="true" 
+                                            minlength="10" 
+                                            rows="5" 
+                                            aria-describedby="message-help"></textarea> 
+                                        <small id="message-help">กรุณากรอกข้อความอย่างน้อย 10 ตัวอักษร</small> 
+                                    </div> 
+                                    <div class="form-group"> 
+                                        <button  
+                                            type="submit" 
+                                            aria-label="ส่งข้อความ"> 
+                                            ส่งข้อความ
+                                        </button> 
+                                    </div> 
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </section> 
     </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- ข้อมูลติดต่อ -->
+                <div class="col-12 col-md-3 mb-4">
+                    <h5>ข้อมูลติดต่อ</h5>
+                    <p>ที่อยู่: 123 ถนนสายหลัก, จังหวัดชลบุรี, ประเทศไทย</p>
+                    <p>โทร: 012-345-6789</p>
+                    <p>อีเมล: contact@example.com</p>
+                </div>
+    
+                <!-- Social Media Links -->
+                <div class="col-12 col-md-3 mb-4">
+                    <h5>ติดตามเรา</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                        <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+    
+                <!-- ลิงก์เมนูที่สำคัญ -->
+                <div class="col-12 col-md-3 mb-4">
+                    <h5>เมนูสำคัญ</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">หน้าหลัก</a></li>
+                        <li><a href="attractions.html">รายละเอียดสถานที่ท่องเที่ยว</a></li>
+                        <li><a href="contact.html">ติดต่อ</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Copyright Notice -->
+                <div class="col-12 col-md-3 mb-4">
+                    <h5>ลิขสิทธิ์</h5>
+                    <p>&copy; 2025 ข้อมูลสถานที่ท่องเที่ยวในจังหวัดชลบุรี. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-to-top" onclick="scrollToTop()">ขึ้นบน</button>
+    </footer>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
